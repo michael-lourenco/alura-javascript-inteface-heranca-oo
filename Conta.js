@@ -5,6 +5,9 @@ export class Conta{
         this._saldo = saldoInicial;
         this._cliente = cliente;
         this._agencia = agencia;
+        if(this.constructor === Conta){
+            console.log("Esta classe (do tipo Conta) não pode ser instanciada diretamente");
+        }
     }
 
     set cliente(novoValor){
@@ -22,7 +25,7 @@ export class Conta{
     }
 
     sacar(valor){
-        let taxa = 1.1;
+        let taxa = 1;
         return this._sacar(valor, taxa);
     }
 
