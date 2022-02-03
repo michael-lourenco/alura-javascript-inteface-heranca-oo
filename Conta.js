@@ -2,12 +2,12 @@ import { Cliente } from "./Cliente.js";
 
 export class Conta{
     constructor(saldoInicial, cliente, agencia) {
+        if(this.constructor === Conta){
+          throw Error("Esta classe (do tipo Conta) não pode ser instanciada diretamente");
+        }
         this._saldo = saldoInicial;
         this._cliente = cliente;
         this._agencia = agencia;
-        if(this.constructor === Conta){
-            console.log("Esta classe (do tipo Conta) não pode ser instanciada diretamente");
-        }
     }
 
     set cliente(novoValor){
