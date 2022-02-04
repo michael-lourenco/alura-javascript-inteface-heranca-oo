@@ -3,7 +3,7 @@ import { Cliente } from "./Cliente.js";
 export class Conta{
     constructor(saldoInicial, cliente, agencia) {
         if(this.constructor === Conta){
-          throw Error("Esta classe (do tipo Conta) não pode ser instanciada diretamente");
+          throw Error("Esta classe (do tipo Conta) não pode ser instanciada diretamente, pois essa é uma classe abstrata");
         }
         this._saldo = saldoInicial;
         this._cliente = cliente;
@@ -24,9 +24,9 @@ export class Conta{
         return this._saldo;
     }
 
+    // Método abstrato
     sacar(valor){
-        let taxa = 1;
-        return this._sacar(valor, taxa);
+        throw new Error("O método sacar da Conta não foi implementado");
     }
 
     _sacar(valor, taxa) {
